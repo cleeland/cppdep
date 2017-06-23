@@ -1,0 +1,11 @@
+
+[env]
+#GCC_PATH=/opt/rh/devtoolset-4/root/
+CC=/opt/rh/devtoolset-4/root/usr/bin/gcc
+CXX=/opt/rh/devtoolset-4/root/usr/bin/g++
+
+
+[settings]
+compiler=gcc
+compiler.version=5.2
+compiler.libcxx=libstdc++11
