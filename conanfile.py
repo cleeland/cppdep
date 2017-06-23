@@ -25,7 +25,9 @@ conan_basic_setup()''')
         self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-	self.copy("cpp-dependencies", src="bin", dst="", keep_path=False)
+	self.copy("cpp-dependencies", src="bin", dst="bin", keep_path=False)
 
     def package_info(self):
         self.cpp_info.bindirs = ['bin']
+        self.env_info.path.append(os.path.join(self.package_folder, "bin"))
+
