@@ -31,3 +31,6 @@ conan_basic_setup()''')
         self.cpp_info.bindirs = ['bin']
         self.env_info.path.append(os.path.join(self.package_folder, "bin"))
 
+    def package_id(self):
+        self.info.settings.compiler = "Any"
+        self.info.settings.compiler.version = "Any"
