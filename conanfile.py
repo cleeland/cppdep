@@ -13,7 +13,7 @@ class CppdependenciesConan(ConanFile):
     build_requires = "Boost/[>1.47]@local/testing"
 
     def source(self):
-	self.run("git clone https://github.com/tomtom-international/cpp-dependencies.git")
+        self.run("git clone https://github.com/tomtom-international/cpp-dependencies.git")
         tools.replace_in_file("cpp-dependencies/CMakeLists.txt", "project(cpp_dependencies LANGUAGES CXX)", '''project(cpp_dependencies LANGUAGES CXX)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()''')
@@ -25,7 +25,7 @@ conan_basic_setup()''')
         self.run("cmake --build . %s" % cmake.build_config)
 
     def package(self):
-	self.copy("cpp-dependencies", src="bin", dst="bin", keep_path=False)
+        self.copy("cpp-dependencies", src="bin", dst="bin", keep_path=False)
 
     def package_info(self):
         self.cpp_info.bindirs = ['bin']
